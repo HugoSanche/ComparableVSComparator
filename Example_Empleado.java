@@ -13,24 +13,17 @@ public class Example_Empleado {
         list.add(new Empleado(11, "Veronica", 22));
         list.add(new Empleado(5, "Ulises", 28));
         System.out.println(list);
+
         Collections.sort(list);
         System.out.println("Using Comparable");
         System.out.println(list);
+
         System.out.println("Using Comparator");
-       
         Comparator<Empleado> com = new Comparator<Empleado>() {
 
             @Override
             public int compare(Empleado emp1, Empleado emp2) {
-               if (emp1.getName().compareTo(emp2.getName())>1){
-                return 1;
-               }
-               else if (emp1.getName().compareTo(emp2.getName())==0){
-                return -1;
-               }
-               else{
-                return 0;
-               }
+              return emp1.getName().compareTo(emp2.getName());
             }
             
         };

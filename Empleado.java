@@ -1,4 +1,4 @@
-public class Empleado implements Comparable {
+public class Empleado implements Comparable<Empleado> {
     private Integer id;
     private String name;
     private int edad;
@@ -40,16 +40,7 @@ public class Empleado implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Empleado emp=(Empleado)o;
-        if(this.getId()>emp.getId()){
-            return 1;
-        }
-        else if (this.getId()==emp.getId()){
-            return 0;
-        }
-        else{
-            return -1;
-        }
+    public int compareTo(Empleado emp) {
+     return getId()-emp.getId();
     }
 }
